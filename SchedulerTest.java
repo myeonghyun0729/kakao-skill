@@ -34,7 +34,7 @@ public class SchedulerTest {
     @Scheduled(fixedRate = 5000)
     public void scheduledTask() {
         // active profile check
-        if (activeProfile.equals(PROFILE_PROD_ONE)) {
+        if (activeProfile == null || activeProfile.equals(PROFILE_PROD_ONE)) {
             logger.info("scheduler stop!");
             return;
         }
